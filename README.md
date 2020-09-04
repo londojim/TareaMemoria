@@ -5,4 +5,4 @@
 * ArchLinux
 * Texlive
 * IDE Kile
-* Compilado con lulatex
+* Compilado con lualatex
