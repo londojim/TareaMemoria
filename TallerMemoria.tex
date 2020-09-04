@@ -1,12 +1,8 @@
-\documentclass{article}
-%\usepackage[utf8]{inputenc} %no lo requiero, se está compilando con lualatex
-\usepackage[spanish]{babel}
-\usepackage{listings}
-\usepackage{graphicx}
-\graphicspath{ {images/} }
-\usepackage{cite}
-\usepackage{float}
-\usepackage{enumerate}
+\documentclass[12pt,letterpaper]{article}
+
+% El archivo configuracion.tex tiene todos los paquetes a usar y los nuevos comandos que requiera
+\input{configuracion.tex}
+
 
 \begin{document}
 
@@ -17,8 +13,7 @@
         \vspace*{1cm}
             
         \Huge
-        \textbf{Nociones de la memoria del computador
-}
+        \textbf{Nociones de la memoria del computador}
             
         \vspace{0.5cm}
         \LARGE
@@ -45,10 +40,9 @@
 
 %***************************FIN PORTADA***********************************
 
-
-
-
 \tableofcontents
+
+
 
 \newpage
 
@@ -68,7 +62,7 @@
     También es posible citar libros \cite{dirac} o documentos en línea \cite{knuthwebsite}.\\\\
     Revisar en la última sección el formato de las referencias en IEEE.
 
-\subsection{EJEMPLO}
+\subsection{EJEMPLO}\label{contenido}
 
 
 En la sección \ref{imagenes}, se presentará como añadir ilustraciones al texto.
@@ -78,11 +72,12 @@ En la sección \ref{imagenes}, se presentará como añadir ilustraciones al text
 En la Figura (\ref{fig:cpplogo}), se presenta el logo de C++ contenido en la carpeta images.
 
 \begin{figure}[H]
-\includegraphics[width=4cm]{cpplogo.png}
+\includegraphics[width=4cm]{images/cpplogo.png}
 \centering
 \caption{Logo de C++}
 \label{fig:cpplogo}
 \end{figure}
+
 
 Las secciones (\ref{intro}), (\ref{contenido}) y (\ref{imagenes}) dependen del estilo del documento.
 
