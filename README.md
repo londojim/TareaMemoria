@@ -1,5 +1,5 @@
 # TareaMemoria
-###Primera tarea asignda por el Profesor Augusto
+### Primera tarea asignda por el Profesor Augusto
 
 # El Código fue creado en:
 * ArchLinux
