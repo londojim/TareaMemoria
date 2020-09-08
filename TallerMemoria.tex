@@ -13,7 +13,7 @@
         \vspace*{1cm}
             
         \Huge
-        \textbf{Nociones de la memoria del computador}
+        \textbf{Nociones de la memoria del computador \textcolor{red}{\Biohazard}}
             
         \vspace{0.5cm}
         \LARGE
@@ -46,40 +46,62 @@
 
 \newpage
 
-\section{Preguntas del taller}\label{preguntas}
-    \begin{enumerate}[a)]
-    \item Defina que es la memoria del computador.
-    \item Mencione los tipos de memoria que conoce y haga una pequeña descripción de cada tipo.
-    \item Describa la manera como se gestiona la memoria en un computador
-    \item ¿Qué hace que una memoria sea más rápida que otra? ¿Por qué esto es importante?
-    \end{enumerate}
+\section{Introducción}
 
-\section{Respuestas del taller} \label{respuestas}
-    Esta sección es para ver qué pasa con los comandos que definen texto.
+En la solución del taller se describirá los tipos de memoria que usa un computador para su funcionamiento, esta descripción se dará en las respuestas que ha planteado el profesor para la realización del taller.\\
 
-\subsection{Citación}
-    Vamos a citar por ejemplo un artículo de \textbf{Albert Einstein} \cite{einstein}.
-    También es posible citar libros \cite{dirac} o documentos en línea \cite{knuthwebsite}.\\\\
-    Revisar en la última sección el formato de las referencias en IEEE.
+En el desarrollo del taller se encontraran preguntas del tipo: Defina, mecione, describa, esto con el fin de simplificar el artículo propuesto por el profesor.\\
 
-\subsection{EJEMPLO}\label{contenido}
+Al final cuando el usuario termine de leer las respuestas del taller, se espera que pueda entender de manera muy básica que es el funcionamiento de la memoria en el computador.\\
 
 
-En la sección \ref{imagenes}, se presentará como añadir ilustraciones al texto.
-
-\section{Inclusión de imágenes} \label{imagenes}
-
-En la Figura (\ref{fig:cpplogo}), se presenta el logo de C++ contenido en la carpeta images.
-
-\begin{figure}[H]
-\includegraphics[width=4cm]{images/cpplogo.png}
-\centering
-\caption{Logo de C++}
-\label{fig:cpplogo}
-\end{figure}
+\newpage
 
 
-Las secciones (\ref{intro}), (\ref{contenido}) y (\ref{imagenes}) dependen del estilo del documento.
+\section{Preguntas del taller.}\label{preguntas}
+    \subsection{Defina que es la memoria del computador.}
+        \begin{quote}
+            ``La memoria cumple un papel muy importante en el computador y su funcionamiento, ya que se
+            trata del dispositivo donde se almacena temporalmente toda la información con la que trabajan
+            los microprocesadores para procesarla y devolver los resultados que los usuarios requieren.''\cite{GuiaProfesor}
+        \end{quote}
+
+    \subsection{Mencione los tipos de memoria que conoce y haga una pequeña descripción de cada tipo.}
+        \begin{itemize}
+         \item Memoria Cache L1,L2,L3
+         \item Memoria RAM
+         \item Memoria Swap
+         \item Memoria ROM
+        \end{itemize}
+
+        \textbf{Memoria Cache L1,L2,L3}: ``La memoria Cache se utiliza para trabajar con los datos e instrucciones que el microprocesador ve que se utilizan más seguido, entonces para no tener que ir a buscarlos una y otra vez de la memoria RAM que es más lenta, coloca una copia de esos datos en la memoria Cache para tenerlos a mano. La memoria Cache se encuentra dentro del microprocesador y se divide en tres niveles (levels en inglés) L1, L2 y L3.''\cite{GuiaProfesor} 
+
+        \textbf{Memoria RAM}: (Random Access Memory) ``La memoria RAM es el tipo de memoria más importante del computador, su nombre representa las siglas de Random Access Memory (Memoria de Acceso Aleatorio); la razón de dicho nombre es porque la misma está dividida en celdas de memoria donde se almacenan cada uno de los bits o pulsos eléctricos (que representan los 1 y 0) y a las cuales se puede acceder directamente
+        indistintamente de su posición o dirección.''\cite{GuiaProfesor}
+
+        \textbf{Memoria Swap}: ``Simplemente sirve para "sostener" porciones de un programa que no se está utilizando "todavía" pero que en cualquier momento sí se utilizará; y que dado que el disco duro es mucho más lento que la memoria RAM no es bueno depender mucho de ella.''\cite{GuiaProfesor}
+
+        \textbf{Memoria ROM} (Read Only Memory)Sirve para almacenar los programas instalados y SO, entre otras funciones. En el momento que esta se apaga, no es pierde la información guardada en ella
+
+        
+    \subsection{Describa la manera como se gestiona la memoria en un computador}
+        La memoria RAM almacena información o instrucciones para ser usada por el microprocesador, en el momento que esta información no se requiere dicha información es borrada del espacio de memoria, lo mismo sucede en el momento que la instruccion es usada por el microprocesador, esta es borrada para liberar espacio en dicha memoria. El encargado de realizar dicha función es el controlador de memoria.       
+
+
+    \subsection{¿Qué hace que una memoria sea más rápida que otra? ¿Por qué esto es importante?}
+        La rapidez de la memoria depende de la cercania fisica a la CPU, dependiendo de la rapidez, se elegirá en que memoria almacenar la información requerida 
+        
+\newpage
+
+\section{Conclusiones}
+    \begin{itemize}
+     \item A medida que la memoria esté mas cerca de la CPU su velocidad aumenta.
+     \item La velocidad es inversamente proporcial al tamaño en byte.
+     \item Entre más grande el tamaño de la memoria comparada con la memoria que está mas cerca a la CPU, su valor económico es más favorable.
+     \item Entre más memoria RAM, mayor consumo energetico, esto ultimo por la forma de cómo cargada de información o instrucciones la memoria ram
+    \end{itemize}
+
+\newpage
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
