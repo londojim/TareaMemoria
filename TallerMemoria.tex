@@ -43,16 +43,15 @@
 \tableofcontents
 
 
-
 \newpage
 
 \section{Introducción}
 
-En la solución del taller se describirá los tipos de memoria que usa un computador para su funcionamiento, esta descripción se dará en las respuestas que ha planteado el profesor para la realización del taller.\\
+En la solución del taller se describirá los tipos de memoria que usa un computador para su funcionamiento, esta descripción se dará en las respuestas que ha planteado el profesor para la realización del taller.
 
-En el desarrollo del taller se encontraran preguntas del tipo: Defina, mencione, describa, esto con el fin de simplificar el artículo propuesto por el profesor.\\
+En el desarrollo del taller se encontraran preguntas del tipo: Defina, mencione, describa, esto con el fin de simplificar el artículo propuesto por el profesor.
 
-Al final cuando el usuario termine de leer las respuestas del taller, se espera que pueda entender de manera muy básica que es el funcionamiento de la memoria en el computador.\\
+Al final cuando el usuario termine de leer las respuestas del taller, se espera que pueda entender de manera muy básica que es el funcionamiento de la memoria en el computador.
 
 
 \newpage
@@ -63,52 +62,78 @@ Al final cuando el usuario termine de leer las respuestas del taller, se espera 
 
 La memoria es uno de los componentes que hace parte del computador, en dicho componente se almacena la información a procesar. La información que este componente procesará puede ser fija o volátil, fija es aquella que al momento de apagar el computador ella no desaparece y volátil cumple lo contrario a lo explicado anteriormente.
 
-Si el usuario desea que su información no se pierda al momento de apagar su computadora, esta se debe de almacenar en la memoria \textbf{\emph{rom}}, mientras que la memoria \textbf{\textit{ram}} se encarga de almacenar información volátil.
+Si el usuario desea que su información no se pierda al momento de apagar su computadora, esta se debe de almacenar en la memoria \textbf{\emph{rom}}, mientras que la memoria \textbf{\textit{RAM}} se encarga de almacenar información volátil.
+
+\begin{quote}
+    ``La memoria cumple un papel muy importante en el computador y su funcionamiento, ya que se
+    trata del dispositivo donde se almacena temporalmente toda la información con la que trabajan
+    los microprocesadores para procesarla y devolver los resultados que los usuarios requieren.''\cite{GuiaProfesor}
+\end{quote}
+
+\subsection{Mencione los tipos de memoria que conoce y haga una pequeña descripción de cada tipo.}
+
+Entre los varios tipos de memoria que se manejan para los sistemas embebidos\footnote{\url{https://n9.cl/y6ac}} o para los computadoras, en este taller sólo se explicaran las mencionadas en el artículo suministrado por el profesor.\footnote{\tiny{\url{http://www.youbioit.com/es/article/shared-information/8714/como
+-funciona-la-memoria-de-una-computadora}}}
+
+\begin{itemize}
+    \item Memoria Cache L1,L2,L3
+    \item Memoria RAM
+    \item Memoria Swap
+    \item Memoria ROM
+\end{itemize}
+
+Se empezará a describir la memoria de mayor rapidez a su acceso pero siendo inversamente proporcional a su tamaño de almacenamiento.
 
 
-        \begin{quote}
-            ``La memoria cumple un papel muy importante en el computador y su funcionamiento, ya que se
-            trata del dispositivo donde se almacena temporalmente toda la información con la que trabajan
-            los microprocesadores para procesarla y devolver los resultados que los usuarios requieren.''\cite{GuiaProfesor}
-        \end{quote}
+La memoria \textbf{\textit{cache}}, esta es la de menor tamaño comparada con el resto de memorias que maneja el computador, pero es la más rápida de todas, dado que su ubicación se encuentra dentro del microprocesador, observar la figura \ref{F:versus}
 
-    \subsection{Mencione los tipos de memoria que conoce y haga una pequeña descripción de cada tipo.}
+\begin{figure}[H]
+    \centering
+    \includegraphics[angle=0]{image/MemoriaCache.pdf}
+    \caption{Tamaño vs Rapidez}
+    \label{F:versus}
+\end{figure}
 
-Entre los varios tipos de memoria que se manejan para los sistemas embebidos\footnote{\url{https://n9.cl/y6ac}} o para los computadoras, en este taller sólo se explicaran las mencionadas en el artículo suministrado por el profesor.\footnote{\url{http://www.youbioit.com/es/article/shared-information/8714/como
--funciona-la-memoria-de-una-computadora}}
 
-        \begin{itemize}
-         \item Memoria Cache L1,L2,L3
-         \item Memoria RAM
-         \item Memoria Swap
-         \item Memoria ROM
-        \end{itemize}
+\textbf{Memoria Cache L1,L2,L3}: La memoria \textbf{\textit{cache}} maneja tres niveles L1,L2,L3, de estos niveles se puede decir que entre más alto el coeficiente numérico es menor su tamaño de almacenamiento y entre más pequeño el coeficiente numérico, mas rápida es la memoria. Lo anterior se puede ver graficamente en la figura \ref{F:versus}.
 
-        \textbf{Memoria Cache L1,L2,L3}: ``La memoria Cache se utiliza para trabajar con los datos e instrucciones que el microprocesador ve que se utilizan más seguido, entonces para no tener que ir a buscarlos una y otra vez de la memoria RAM que es más lenta, coloca una copia de esos datos en la memoria Cache para tenerlos a mano. La memoria Cache se encuentra dentro del microprocesador y se divide en tres niveles (levels en inglés) L1, L2 y L3.''\cite{GuiaProfesor} 
+\begin{quote}
+     ``La memoria Cache se utiliza para trabajar con los datos e instrucciones que el microprocesador ve que se utilizan más seguido, entonces para no tener que ir a buscarlos una y otra vez de la memoria RAM que es más lenta, coloca una copia de esos datos en la memoria Cache para tenerlos a mano.''\cite{GuiaProfesor} 
+\end{quote}
 
-        \textbf{Memoria RAM}: (Random Access Memory) ``La memoria RAM es el tipo de memoria más importante del computador, su nombre representa las siglas de Random Access Memory (Memoria de Acceso Aleatorio); la razón de dicho nombre es porque la misma está dividida en celdas de memoria donde se almacenan cada uno de los bits o pulsos eléctricos (que representan los 1 y 0) y a las cuales se puede acceder directamente
-        indistintamente de su posición o dirección.''\cite{GuiaProfesor}
+\textbf{Memoria RAM (Random Access Memory):} Esta memoria se encuentra ubicada fuera del microprocesador, por lo tanto hace que su acceso a ella sea mas lenta comparada con la memoria \textbf{\textit{cache}}, su tamaño de almace es mucho mas grande que la memoria \textbf{\textit{cache}}. Se debe tener presente que al momento de formatear un computador, el sistema operativo no se reinstala él mismo, por lo tanto este procedimiento se hace cargando todo el sistema operativo en la memoria \textbf{\textit{RAM}} y desde allí se ejecuta la nueva instalación deseada.
 
-        \textbf{Memoria Swap}: ``Simplemente sirve para "sostener" porciones de un programa que no se está utilizando "todavía" pero que en cualquier momento sí se utilizará; y que dado que el disco duro es mucho más lento que la memoria RAM no es bueno depender mucho de ella.''\cite{GuiaProfesor}
+Lo mencionado anteriormente es considerado como una de las varias funciones de la memoria \textbf{\textit{RAM}}, dado que ella tiene más funciones durante el encendido del computador.
 
-        \textbf{Memoria ROM} (Read Only Memory)Sirve para almacenar los programas instalados y SO, entre otras funciones. En el momento que esta se apaga, no es pierde la información guardada en ella
+\begin{quote}
+    ``La memoria RAM es el tipo de memoria más importante del computador, su nombre representa las siglas de Random Access Memory (Memoria de Acceso Aleatorio); la razón de dicho nombre es porque la misma está dividida en celdas de memoria donde se almacenan cada uno de los bits o pulsos eléctricos (que representan los 1 y 0) y a las cuales se puede acceder directamente indistintamente de su posición o dirección.''\cite{GuiaProfesor}
+\end{quote}
+
+\textbf{Memoria Swap}: Conocida como la unidad de intercambio\footnote{\url{https://wiki.archlinux.org/index.php/Swap_(Espa\%C3\%B1ol)}}, esta memoria se encuentra en un espacio de asignado del disco duro en el momento de la instalación del sistema operativo o en un momento posterior. Una de sus funciones es dar apoyo a la memoria \textbf{\textit{RAM}} en el momento que se está se está quedando sin espacio de memoria
+
+\begin{quote}
+    ``Simplemente sirve para ``sostener'' porciones de un progRAMa que no se está utilizando ``todavía'' pero que en cualquier momento sí se utilizará; y que dado que el disco duro es mucho más lento que la memoria \textbf{\textit{RAM}} no es bueno depender mucho de ella.''\cite{GuiaProfesor}
+\end{quote}
+
+
+\textbf{Memoria ROM} (Read Only Memory)Sirve para almacenar los progRAMas instalados y SO, entre otras funciones. En el momento que esta se apaga, no es pierde la información guardada en ella
 
         
-    \subsection{Describa la manera como se gestiona la memoria en un computador}
-        La memoria RAM almacena información o instrucciones para ser usada por el microprocesador, en el momento que esta información no se requiere dicha información es borrada del espacio de memoria, lo mismo sucede en el momento que la instruccion es usada por el microprocesador, esta es borrada para liberar espacio en dicha memoria. El encargado de realizar dicha función es el controlador de memoria.       
+\subsection{Describa la manera como se gestiona la memoria en un computador}
+    La memoria RAM almacena información o instrucciones para ser usada por el microprocesador, en el momento que esta información no se requiere dicha información es borrada del espacio de memoria, lo mismo sucede en el momento que la instruccion es usada por el microprocesador, esta es borrada para liberar espacio en dicha memoria. El encargado de realizar dicha función es el controlador de memoria.       
 
 
-    \subsection{¿Qué hace que una memoria sea más rápida que otra? ¿Por qué esto es importante?}
-        La rapidez de la memoria depende de la cercania fisica a la CPU, dependiendo de la rapidez, se elegirá en que memoria almacenar la información requerida 
+\subsection{¿Qué hace que una memoria sea más rápida que otra? ¿Por qué esto es importante?}
+    La rapidez de la memoria depende de la cercania fisica a la CPU, dependiendo de la rapidez, se elegirá en que memoria almacenar la información requerida 
         
 \newpage
 
 \section{Conclusiones}
     \begin{itemize}
-     \item A medida que la memoria esté mas cerca de la CPU su velocidad aumenta.
-     \item La velocidad es inversamente proporcial al tamaño en byte.
-     \item Entre más grande el tamaño de la memoria comparada con la memoria que está mas cerca a la CPU, su valor económico es más favorable.
-     \item Entre más memoria RAM, mayor consumo energetico, esto ultimo por la forma de cómo cargada de información o instrucciones la memoria ram
+        \item A medida que la memoria esté mas cerca de la CPU su velocidad aumenta.
+        \item La velocidad es inversamente proporcial al tamaño en byte.
+        \item Entre más grande el tamaño de la memoria comparada con la memoria que está mas cerca a la CPU, su valor económico es más favorable.
+        \item Entre más memoria RAM, mayor consumo energetico, esto ultimo por la forma de cómo cargada de información o instrucciones la memoria RAM
     \end{itemize}
 
 \newpage
