@@ -41,6 +41,7 @@
 %***************************FIN PORTADA***********************************
 
 \tableofcontents
+\listoffigures
 
 
 \newpage
@@ -62,7 +63,7 @@ Al final cuando el usuario termine de leer las respuestas del taller, se espera 
 
 La memoria es uno de los componentes que hace parte del computador, en dicho componente se almacena la información a procesar. La información que este componente procesará puede ser fija o volátil, fija es aquella que al momento de apagar el computador ella no desaparece y volátil cumple lo contrario a lo explicado anteriormente.
 
-Si el usuario desea que su información no se pierda al momento de apagar su computadora, esta se debe de almacenar en la memoria \textbf{\emph{rom}}, mientras que la memoria \textbf{\textit{RAM}} se encarga de almacenar información volátil.
+Si el usuario desea que su información no se pierda al momento de apagar su computadora, esta se debe de almacenar en la memoria \textbf{\emph{ROM}}, mientras que la memoria \textbf{\textit{RAM}} se encarga de almacenar información volátil.
 
 \begin{quote}
     ``La memoria cumple un papel muy importante en el computador y su funcionamiento, ya que se
@@ -103,37 +104,67 @@ La memoria \textbf{\textit{cache}}, esta es la de menor tamaño comparada con el
 
 \textbf{Memoria RAM (Random Access Memory):} Esta memoria se encuentra ubicada fuera del microprocesador, por lo tanto hace que su acceso a ella sea mas lenta comparada con la memoria \textbf{\textit{cache}}, su tamaño de almace es mucho mas grande que la memoria \textbf{\textit{cache}}. Se debe tener presente que al momento de formatear un computador, el sistema operativo no se reinstala él mismo, por lo tanto este procedimiento se hace cargando todo el sistema operativo en la memoria \textbf{\textit{RAM}} y desde allí se ejecuta la nueva instalación deseada.
 
-Lo mencionado anteriormente es considerado como una de las varias funciones de la memoria \textbf{\textit{RAM}}, dado que ella tiene más funciones durante el encendido del computador.
+Lo mencionado anteriormente es considerado como una de las varias funciones de la memoria \textbf{\textit{RAM}}, dado que ella tiene más funciones durante el encendido y apagado del computador. Aprovechando que hice cambio de la memoria RAM de mi portátil, dejo la imagen de mi antigua memoria de 4GB donde se pude visualizar la forma física y unas caracteristicas de ella, ver figura \ref{F:RAM}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[angle=0,width=0.5\linewidth]{image/MemoriaRam.pdf}
+    \caption{Memoria RAM}
+    \label{F:RAM}
+\end{figure}
 
 \begin{quote}
     ``La memoria RAM es el tipo de memoria más importante del computador, su nombre representa las siglas de Random Access Memory (Memoria de Acceso Aleatorio); la razón de dicho nombre es porque la misma está dividida en celdas de memoria donde se almacenan cada uno de los bits o pulsos eléctricos (que representan los 1 y 0) y a las cuales se puede acceder directamente indistintamente de su posición o dirección.''\cite{GuiaProfesor}
 \end{quote}
 
-\textbf{Memoria Swap}: Conocida como la unidad de intercambio\footnote{\url{https://wiki.archlinux.org/index.php/Swap_(Espa\%C3\%B1ol)}}, esta memoria se encuentra en un espacio de asignado del disco duro en el momento de la instalación del sistema operativo o en un momento posterior. Una de sus funciones es dar apoyo a la memoria \textbf{\textit{RAM}} en el momento que se está se está quedando sin espacio de memoria
+
+
+\textbf{Memoria Swap}: Conocida como la unidad de intercambio\footnote{\url{https://wiki.archlinux.org/index.php/Swap_(Espa\%C3\%B1ol)}}, esta memoria se encuentra en un espacio de asignación del disco duro en el momento de la instalación del sistema operativo o en un momento posterior. Una de sus funciones es dar apoyo a la memoria \textbf{\textit{RAM}} en el momento que  esta se está quedando sin espacio para almacenar instrucciones o variables.
 
 \begin{quote}
-    ``Simplemente sirve para ``sostener'' porciones de un progRAMa que no se está utilizando ``todavía'' pero que en cualquier momento sí se utilizará; y que dado que el disco duro es mucho más lento que la memoria \textbf{\textit{RAM}} no es bueno depender mucho de ella.''\cite{GuiaProfesor}
+    ``Simplemente sirve para ``sostener'' porciones de un programa que no se está utilizando ``todavía'' pero que en cualquier momento sí se utilizará; y que dado que el disco duro es mucho más lento que la memoria \textbf{\textit{RAM}} no es bueno depender mucho de ella.''\cite{GuiaProfesor}
 \end{quote}
 
 
-\textbf{Memoria ROM} (Read Only Memory)Sirve para almacenar los progRAMas instalados y SO, entre otras funciones. En el momento que esta se apaga, no es pierde la información guardada en ella
+\textbf{Memoria ROM (Read Only Memory)} Esta es la memoria de mayor capacidad de almacenamiento, pero como se ha venido explicando en este documento, entre más grande es el tamaño del almacenamiento, su velocidad de procesamiento es más lento, lo anterior se puede recordar viento la figura \ref{F:versus}. La memoria \textbf{\textit{ROM}} sirve para almacenar los programas instalados y SO, entre otras funciones. En el momento que el computador se apaga, la información guardada en ella no se pierde dado que es una memoria no volátil.
+
+Para que el lector conozca la parte interna de una memoria \textbf{\textit{ROM}}, puede ver la figura \ref{F:subfiguras} donde se muestra la parte anterior y posterior de un disco duro de conexión ide\footnote{\url{https://www.profesionalreview.com/2019/12/07/ide-placa-base/}}. Esta imagen es proporcionada de un disco duro que tengo como adorno en mi casa.
+
+\begin{figure}[!ht]
+    \centering
+    \subfloat[Parte frontal]{
+        \includegraphics[width=0.3\textwidth]{image/DDFront.pdf}
+        \label{F:subfig1}}
+    \qquad
+    \subfloat[Parte posterior]{
+        \includegraphics[width=0.3\textwidth]{image/DDBack.pdf}
+        \label{F:subfig2}}
+
+    \caption{Disco duro de conexión IDE}
+    \label{F:subfiguras}
+\end{figure}
+
 
         
 \subsection{Describa la manera como se gestiona la memoria en un computador}
-    La memoria RAM almacena información o instrucciones para ser usada por el microprocesador, en el momento que esta información no se requiere dicha información es borrada del espacio de memoria, lo mismo sucede en el momento que la instruccion es usada por el microprocesador, esta es borrada para liberar espacio en dicha memoria. El encargado de realizar dicha función es el controlador de memoria.       
+    La memoria cache en el momento que puede identificar cuál programa o variables está usando más seguido, esta identificación es almacenada en L1, L2, L3 de esta manera se puede acceder más rapido a la información.
+
+    La memoria RAM almacena información o instrucciones para ser usada por el microprocesador, en el momento que esta información no se requiere dicha información es borrada del espacio de memoria, lo mismo sucede en el momento que la instrucción es usada por el microprocesador, esta es borrada para liberar espacio en dicha memoria. El encargado de realizar dicha función es el controlador de memoria.
+
+    La memoria Swap que tiene un espacio en el disco duro, es la encargada de dar apoyo a la memoria RAM en el mometno que esta se está quedando sin espacio o tiene un programa suspendido
 
 
 \subsection{¿Qué hace que una memoria sea más rápida que otra? ¿Por qué esto es importante?}
-    La rapidez de la memoria depende de la cercania fisica a la CPU, dependiendo de la rapidez, se elegirá en que memoria almacenar la información requerida 
+    La rapidez de la memoria depende de la cercania fisica a la CPU, dependiendo de la rapidez, se elegirá en que memoria almacenar la información requerida, de esta manera se garantiza una mejor eficiencia de tiempo en el uso de las instrucciones o variables que se esté usando en el momento.
         
 \newpage
 
 \section{Conclusiones}
     \begin{itemize}
         \item A medida que la memoria esté mas cerca de la CPU su velocidad aumenta.
-        \item La velocidad es inversamente proporcial al tamaño en byte.
+        \item La velocidad es inversamente proporcional al tamaño en byte.
         \item Entre más grande el tamaño de la memoria comparada con la memoria que está mas cerca a la CPU, su valor económico es más favorable.
-        \item Entre más memoria RAM, mayor consumo energetico, esto ultimo por la forma de cómo cargada de información o instrucciones la memoria RAM
+        \item Entre más memoria RAM, mayor consumo energético, esto ultimo por la forma de cómo es cargada la información o instrucciones en ella.
     \end{itemize}
 
 \newpage
